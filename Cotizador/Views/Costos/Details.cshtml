@@ -1,0 +1,74 @@
+﻿@model Cotizador.Models.Costos
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Costos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Componente.Codigo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Componente.Codigo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Producto.Codigo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Producto.Codigo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoCosto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoCosto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Costo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Costo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InicioVigencia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InicioVigencia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FinVigencia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FinVigencia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Activo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Activo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDCosto }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

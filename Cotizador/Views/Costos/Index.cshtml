@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Cotizador.Models.Costos>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Componente.Codigo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Producto.Codigo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoCosto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Costo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InicioVigencia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FinVigencia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Activo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Componente.Codigo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Producto.Codigo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoCosto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Costo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InicioVigencia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FinVigencia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Activo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDCosto }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDCosto }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDCosto })
+        </td>
+    </tr>
+}
+
+</table>
