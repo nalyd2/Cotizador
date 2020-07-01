@@ -16,15 +16,16 @@ namespace Cotizador.Controllers
         private CotizadorConext db = new CotizadorConext();
 
         // GET: CotizacionDets
-        public ActionResult Index()
+        public ActionResult Index(int? id)
         {
-            var cotizacionDets = db.CotizacionDets.Include(c => c.Cotizacion);
+           // var cotizacionDets = db.CotizacionDets.Include(c => c.Cotizacion);
+            var cotizacionDets = db.CotizacionDets.Where(cd=> cd.IDCotizacion == id);
             return View(cotizacionDets.ToList());
         }
 
         // GET: CotizacionDets/Details/5
         public ActionResult Details(int? id)
-        {
+        { 
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

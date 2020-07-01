@@ -22,6 +22,17 @@ namespace Cotizador.Controllers
             return View(cotizacions.ToList());
         }
 
+        public ActionResult IndexDetalle(int? id)
+        {
+            var cotizacionDets = db.CotizacionDets.Where(cd => cd.IDCotizacionDet == id);
+            return View("~/Views/CotizacionDets/Index.cshtml", cotizacionDets.ToList());
+        }
+        public ActionResult CreateDetalle()
+        {
+            ViewBag.IDCotizacion = new SelectList(db.Cotizacions, "IDCotizacion", "Cliente");
+            return View("~/Views/CotizacionDets/Create.cshtml");
+        }
+
         // GET: Cotizacions/Details/5
         public ActionResult Details(int? id)
         {
@@ -61,7 +72,7 @@ namespace Cotizador.Controllers
             ViewBag.IDProducto = new SelectList(db.Productos, "IDProducto", "Codigo", cotizacion.IDProducto);
             return View(cotizacion);
         }
-
+       
         // GET: Cotizacions/Edit/5
         public ActionResult Edit(int? id)
         {
